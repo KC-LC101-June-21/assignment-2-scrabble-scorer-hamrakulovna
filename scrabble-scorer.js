@@ -106,7 +106,7 @@ function transform(obj) {
   for (item in obj) {
     for (let i = 0; i < obj[item].length; i++) {
       x = obj[item][i].toLowerCase();
-      transformedObj[x] = item;
+      transformedObj[x] = Number(item);
     }
   }
   return transformedObj;
@@ -115,7 +115,7 @@ function transform(obj) {
 let newPointStructure = transform(oldPointStructure);
 
 newPointStructure = transform(oldPointStructure);
-newPointStructure[' '] = '0';
+newPointStructure[' '] = 0;
 
 function runProgram() {
   let response = initialPrompt();
